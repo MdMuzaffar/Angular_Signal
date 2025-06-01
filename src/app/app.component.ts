@@ -70,4 +70,11 @@ export class AppComponent {
     this.isEditing = true;
     this.editingIndex = index;
   }
+
+  deleteUser(index: number) {
+    if (index !== null) {
+      this.items.splice(index, 1);
+      localStorage.setItem('users', JSON.stringify(this.items));
+    }
+  }
 }
